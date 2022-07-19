@@ -12,6 +12,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="please_enter_your_registered_email_address_you_will_receive_a_otp">Please enter your registered Email address You will receive a OTP.</string>
+    <string name="enter_your_email_and_new_password">Enter your email and new password</string>
+    <string name="email">Email</string>
+    <string name="don_t_have_to_change_password">Don\'t have to change password</string>
+    <string name="change_password">Change Password</string>
+    <string name="password">Password</string>
 
 
     <integer-array name="progress_colors">

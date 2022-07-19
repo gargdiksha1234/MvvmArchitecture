@@ -34,5 +34,8 @@ class LoginFragment : BaseFragment() {
         binding.tvSignUp.setOnClickListener {
             findNavController().navigate(R.id.signupFragment)
         }
+        binding.tvChangepassword.setOnClickListener {
+            findNavController().navigate(R.id.changePasswordFragment)
+        }
     }
 }
