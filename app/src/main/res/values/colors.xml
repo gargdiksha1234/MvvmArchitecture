@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="toupe">#c6b086</color>
+    <color name="dull_orange">#cf9a2a</color>
+    <color name="greyish_brown_30">#48474746</color>
+    <color name="greyish_brown">#FF474746</color>
+    <color name="dullcolor_orange">#d09b29</color>
+    <color name="dull_orange_two">#d09b29</color>
+    <color name="lightish_green">#55e263</color>
+    <color name="warm_grey">#999999</color>
+    <color name="dark_grey">#282b30</color>
+    <color name="black_700">#b3000000</color>
+    <color name="dark_two">#18181d</color>
+    <color name="dark_three">#282a35</color>
+    <color name="warm_grey_three">#8d8d8d</color>
+    <color name="dark_gray_three">#24272c</color>
+    <color name="almost_black">#0f1114</color>
+    <color name="greyish">#b4b4b4</color>
+    <color name="brownishorang2">#c28219</color>
+    <color name="purple_brown">#231f21</color>
+    <color name="milk_chocolate">#754d25</color>
+    <color name="dark_grey_three">#24272c</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FFA500</color>
+    <color name="yellow">#ffff00</color>
+    <color name="dark_green">#008000</color>
+    <color name="blue">#0000FF</color>
+    <color name="indigo">#4B0082</color>
+    <color name="violet">#8F00FF</color>
+</resources>
