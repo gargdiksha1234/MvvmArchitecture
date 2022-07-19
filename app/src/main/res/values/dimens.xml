@@ -1,3 +1,25 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="login_et_margin">40dp</dimen>
+    <dimen name="login_et_textsize">15sp</dimen>
+    <dimen name="login_et_paddingstart">48dp</dimen>
+    <dimen name="login_btn_margin">82dp</dimen>
+    <dimen name="signup_text_margin">76dp</dimen>
+    <dimen name="signup_text_margintop_bottom">36dp</dimen>
+    <dimen name="margin_top_35">35dp</dimen>
+    <dimen name="signup_btn_width">210dp</dimen>
+    <dimen name="signup_btn_hight">45dp</dimen>
+    <dimen name="signup_icon_hight">12dp</dimen>
+    <dimen name="signup_icon_width">16dp</dimen>
+    <dimen name="signup_icon_margin">15.5dp</dimen>
+    <dimen name="signup_et_hight">48dp</dimen>
+    <dimen name="signup_logo_margin">145dp</dimen>
+    <dimen name="TextInputLayout_width">302dp</dimen>
+    <dimen name="TextInputLayout_margin">28.7dp</dimen>
+    <dimen name="tv_padding">28.7dp</dimen>
+    <dimen name="tv_drawable_padding">15dp</dimen>
+    <dimen name="tandc_textsize">14.3sp</dimen>
+    <dimen name="tc_textsize">12.3sp</dimen>
+    <dimen name="tc_margintop">34.6dp</dimen>
+    <dimen name="tc_marginstart">20dp</dimen>
 </resources>
