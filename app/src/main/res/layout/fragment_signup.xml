@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="signupViewModel"
+            type="com.example.baseproject.ui.onBoarding.signup.SignUpViewModel" />
+    </data>
+<ScrollView
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="#C0C0C0"
 android:scaleType="fitXY"
-xmlns:app="http://schemas.android.com/apk/res-auto"
+
 tools:context=".ui.onBoarding.signup.SignupFragment">
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,6 +78,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
             android:layout_height="match_parent"
             android:textSize="12.5sp"
             android:hint="Name"
+            android:text="@={signupViewModel.name}"
             android:paddingTop="10dp"
             android:paddingStart="16dp"
             android:drawablePadding="@dimen/tv_drawable_padding"
@@ -101,6 +110,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
             android:layout_height="match_parent"
             android:textSize="12.5sp"
             android:hint="Email"
+            android:text="@={signupViewModel.email}"
             android:inputType="textEmailAddress"
             android:maxLength="50"
             android:paddingTop="10dp"
@@ -130,6 +140,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
             android:hint="Phone Number"
             android:inputType="number"
             android:maxLength="10"
+            android:text="@={signupViewModel.phone}"
             android:textSize="12.5sp"
             android:paddingTop="10dp"
             android:drawablePadding="9dp"
@@ -161,6 +172,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
             android:layout_height="wrap_content"
             android:textSize="12.5sp"
             android:hint="Password"
+            android:text="@={signupViewModel.password}"
             android:maxLength="20"
             android:inputType="textPassword"
             android:paddingTop="@dimen/tv_drawable_padding"
@@ -206,6 +218,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
         android:layout_marginEnd="79dp"
         android:layout_marginTop="31.3dp"
         android:text="SIGNUP"
+        android:onClick="@{_ ->signupViewModel.add1()}"
         android:textColor="@color/white"
         android:gravity="center"
         android:textStyle="bold"
@@ -261,7 +274,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
 
 
 </ScrollView>
-
+</layout>
 
 
 

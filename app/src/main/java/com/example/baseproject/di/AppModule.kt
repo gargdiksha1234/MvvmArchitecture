@@ -1,7 +1,10 @@
 package com.example.baseproject.di
 
+import android.content.Context
+import androidx.room.Room
 import com.example.baseproject.api.Api
 import com.example.baseproject.api.RetroHelper
+import com.example.baseproject.db.EmployeeDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,5 +37,19 @@ class AppModule {
     @Provides
     fun providesRetrofit(retrofit: Retrofit): Api {
         return retrofit.create(Api::class.java)
+    }
+    @Volatile
+    private var INSTANCE : EmployeeDatabase?= null
+     @Provides
+    fun getDatabase(context: Context) : EmployeeDatabase {
+        if (INSTANCE == null) {
+            synchronized(this) {}
+            INSTANCE = Room.databaseBuilder(
+                context,
+                EmployeeDatabase::class.java, "userDB"
+            )
+                .build()
+        }
+        return INSTANCE!!
     }
 }

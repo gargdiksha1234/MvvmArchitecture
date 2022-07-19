@@ -1,6 +1,7 @@
 package com.example.baseproject.ui.onBoarding.login
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.baseproject.R
 import com.example.baseproject.databinding.FragmentLoginBinding
 import com.example.baseproject.base.BaseFragment
+import com.example.baseproject.db.EmployeeDatabase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +29,11 @@ class LoginFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        val db = EmployeeDatabase.getDatabase(requireContext())
+
+        Log.d("hello",db.toString())
 
         binding.tvForgetPassword.setOnClickListener{
             findNavController().navigate(R.id.forgetPasswordFragment)

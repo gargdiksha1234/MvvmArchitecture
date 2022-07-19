@@ -6,5 +6,5 @@ import androidx.room.OnConflictStrategy
 @Dao
 interface EmployeeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertStudent(employee: Employee)
+    fun insertEmployee(employee: Employee)
 }

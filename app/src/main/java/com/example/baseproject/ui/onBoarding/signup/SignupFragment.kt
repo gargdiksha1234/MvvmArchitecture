@@ -25,7 +25,8 @@ class SignupFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding=FragmentSignupBinding.inflate(inflater,container,false)
-        employeeRepository = EmployeeRepository(EmployeeDatabase.getDatabase(requireActivity().applicationContext))
+     //   employeeRepository = EmployeeRepository(
+       //     EmployeeDatabase.getDatabase(requireActivity().applicationContext))
 
 
         return binding.root
