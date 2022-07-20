@@ -1,13 +1,16 @@
 package com.example.baseproject.di
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.example.baseproject.api.Api
 import com.example.baseproject.api.RetroHelper
+import com.example.baseproject.db.EmployeeDao
 import com.example.baseproject.db.EmployeeDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -38,18 +41,14 @@ class AppModule {
     fun providesRetrofit(retrofit: Retrofit): Api {
         return retrofit.create(Api::class.java)
     }
-    @Volatile
-    private var INSTANCE : EmployeeDatabase?= null
+    @Singleton
      @Provides
-    fun getDatabase(context: Context) : EmployeeDatabase {
-        if (INSTANCE == null) {
-            synchronized(this) {}
-            INSTANCE = Room.databaseBuilder(
-                context,
-                EmployeeDatabase::class.java, "userDB"
-            )
-                .build()
-        }
-        return INSTANCE!!
+    fun getDatabase(context:Application) : EmployeeDatabase {
+        return EmployeeDatabase.getDatabase(context)
+    }
+    @Singleton
+    @Provides
+    fun employeeDao(employeeDatabase: EmployeeDatabase) : EmployeeDao {
+        return employeeDatabase.employeeDao()
     }
 }

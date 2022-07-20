@@ -1,5 +1,6 @@
 package com.example.baseproject.ui.onBoarding.signup
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.baseproject.base.BaseViewModel
@@ -16,8 +17,10 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
     var email= MutableLiveData<String>()
     var phone= MutableLiveData<String>()
     var password= MutableLiveData<String>()
+
     fun addPlayer(employee: Employee)
     {
+        Log.d("tag","function")
         viewModelScope.launch(Dispatchers.IO) {
             employeeRepository.addPlayer(employee)
         }
@@ -25,12 +28,13 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
     fun add1(){
         addPlayer(
             Employee(
-            1,
-            name.toString(),
-            email.toString(),
-            phone.toString(),
-            password.toString()
+            null,
+            name.value.toString(),
+            email.value.toString(),
+            phone.value.toString(),
+            password.value.toString()
                 ))
+
     }
 
 }

@@ -8,6 +8,19 @@ import androidx.room.RoomDatabase
 abstract class EmployeeDatabase :RoomDatabase(){
     abstract fun employeeDao():EmployeeDao
     companion object {
+        @Volatile
+        private var INSTANCE : EmployeeDatabase ?= null
 
+        fun getDatabase(context: Context) : EmployeeDatabase {
+            if (INSTANCE == null) {
+                synchronized(this) {}
+                INSTANCE = Room.databaseBuilder(
+                    context,
+                    EmployeeDatabase::class.java, "userDB"
+                )
+                    .build()
+            }
+            return INSTANCE!!
+        }
     }
 }
