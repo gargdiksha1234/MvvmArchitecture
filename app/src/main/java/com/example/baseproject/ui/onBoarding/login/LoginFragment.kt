@@ -5,16 +5,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.baseproject.R
 import com.example.baseproject.databinding.FragmentLoginBinding
 import com.example.baseproject.base.BaseFragment
 import com.example.baseproject.db.EmployeeDatabase
+import com.example.baseproject.ui.onBoarding.signup.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment() {
 
+    private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: FragmentLoginBinding
 
 
@@ -23,7 +26,7 @@ class LoginFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding=FragmentLoginBinding.inflate(inflater)
+        binding=FragmentLoginBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -31,9 +34,7 @@ class LoginFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val db = EmployeeDatabase.getDatabase(requireContext())
-
-        Log.d("hello",db.toString())
+        loginViewModel= ViewModelProvider(this)[LoginViewModel::class.java]
 
         binding.tvForgetPassword.setOnClickListener{
             findNavController().navigate(R.id.forgetPasswordFragment)
