@@ -17,6 +17,7 @@
     <string name="don_t_have_to_change_password">Don\'t have to change password</string>
     <string name="change_password">Change Password</string>
     <string name="password">Password</string>
+    <string name="name">Name</string>
 
 
     <integer-array name="progress_colors">
