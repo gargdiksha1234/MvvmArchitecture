@@ -18,6 +18,13 @@ class LoginViewModel@Inject constructor(private val employeeRepository: Employee
     var loginEmail= MutableLiveData<String>()
     var loginPassword= MutableLiveData<String>()
     var tag:String=""
+    //        fun getAll(){
+//            Log.e("aa","121212")
+//            viewModelScope.launch(Dispatchers.IO) {
+//            val tag= employeeRepository.getAll(loginemail.value.toString()).toString()
+//               Log.d("tag",tag)
+//            }
+//        }
 
     fun setEmail():String
     {
