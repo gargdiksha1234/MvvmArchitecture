@@ -185,7 +185,7 @@
                     android:layout_height="50dp"
                     android:text="Login"
                     android:textSize="20sp"
-                    android:onClick="@{_ ->loginViewModel.loginPasswordChecking(loginViewModel.setEmail())}"
+                    android:onClick="@{() ->loginViewModel.loginPasswordChecking(loginViewModel.setEmail())}"
                     android:textColor="@color/white"
                     android:background="@drawable/button_bg"
                     app:layout_constraintStart_toStartOf="@id/left_guide_line"
