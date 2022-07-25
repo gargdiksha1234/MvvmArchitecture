@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/button_bg.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/ic_arrow2.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/ic_facebook.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/ic_google.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/round_corner.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/white_circle.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/activity_base.xml" value="0.14766970618034447" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.14766970618034447" />
+        <entry key="app/src/main/res/layout/fragment_base.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/fragment_forget_password.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.21505376344086022" />
+        <entry key="app/src/main/res/layout/fragment_signup.xml" value="0.2703125" />
+        <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.17325227963525835" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
