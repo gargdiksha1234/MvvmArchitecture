@@ -6,7 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.baseproject.base.BaseViewModel
 import com.example.baseproject.repository.EmployeeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -15,6 +17,15 @@ class LoginViewModel@Inject constructor(private val employeeRepository: Employee
 
     var loginEmail= MutableLiveData<String>()
     var loginPassword= MutableLiveData<String>()
+    var tag:String=""
+    //        fun getAll(){
+//            Log.e("aa","121212")
+//            viewModelScope.launch(Dispatchers.IO) {
+//            val tag= employeeRepository.getAll(loginemail.value.toString()).toString()
+//               Log.d("tag",tag)
+//            }
+//        }
+
     fun setEmail():String
     {
         var emails=loginEmail.value
@@ -25,10 +36,17 @@ class LoginViewModel@Inject constructor(private val employeeRepository: Employee
 
    fun loginPasswordChecking(loginEmail:String)
    {
+       Log.d("Checking",loginEmail.toString())
        viewModelScope.launch(Dispatchers.IO) {
-           val tag=employeeRepository.loginPasswordChecking(loginEmail).toString()
+           tag=employeeRepository.loginPasswordChecking(loginEmail).toString().trim()
            Log.d("pass",tag)
-
+           Log.d("ddd",loginPassword.value.toString())
+       }
+       CoroutineScope(Dispatchers.Main).launch {
+           delay(5000)
+           if (loginPassword.value.toString() == tag) {
+               Log.d("Login", "Login Done")
+           } else Log.d("Login", "Login Not Done")
        }
    }
 

@@ -35,6 +35,7 @@ class LoginFragment : BaseFragment() {
 
 
         loginViewModel= ViewModelProvider(this)[LoginViewModel::class.java]
+        binding.loginViewModel=loginViewModel
 
         binding.tvForgetPassword.setOnClickListener{
             findNavController().navigate(R.id.forgetPasswordFragment)
