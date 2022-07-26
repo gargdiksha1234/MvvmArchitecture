@@ -48,8 +48,7 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
     fun vali(){
         if(name.value.toString().length<3)
             nameError.value="Enter a valid Name"
-        else {nameError.value=""
-              nnnn() }
+        else {nameError.value="" }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email.value.toString()).matches())
             emailError.value="Invalid Email Address"
@@ -58,13 +57,11 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
 
         if (phone.value.toString().length != 10)
             phoneError.value="Enter a valid number"
-        else {phoneError.value=""
-              nnnn()}
+        else {phoneError.value="" }
 
         if(password.value.toString().length <6)
             passError.value="Password must me more than 6 char"
-        else {passError.value=""
-              nnnn()}
+        else {passError.value="" }
     }
 
     fun nnnn()
