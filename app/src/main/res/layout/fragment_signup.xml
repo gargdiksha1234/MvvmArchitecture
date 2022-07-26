@@ -126,7 +126,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/filledTextSignupNumber"
         android:layout_width="@dimen/TextInputLayout_width"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         app:boxStrokeColor="@color/white"
         app:boxStrokeWidth="0dp"
         app:hintEnabled="false"
@@ -140,7 +140,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
         <EditText
             android:id="@+id/et_signupnumber"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Phone Number"
             android:inputType="number"
             android:maxLength="10"
@@ -157,7 +157,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/filledTextPassword"
         android:layout_width="@dimen/TextInputLayout_width"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         app:boxStrokeColor="@color/white"
         app:boxStrokeWidth="0dp"
         app:hintEnabled="false"
@@ -223,7 +223,7 @@ tools:context=".ui.onBoarding.signup.SignupFragment">
         android:layout_marginEnd="79dp"
         android:layout_marginTop="31.3dp"
         android:text="SIGNUP"
-        android:onClick="@{_ ->signupViewModel.validation()}"
+        android:onClick="@{_ ->signupViewModel.vali()}"
         android:textColor="@color/white"
         android:gravity="center"
         android:textStyle="bold"

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.baseproject.R
@@ -40,6 +41,7 @@ class SignupFragment : BaseFragment() {
 
         signUpViewModel= ViewModelProvider(this)[SignUpViewModel::class.java]
         binding.signupViewModel=signUpViewModel
+        binding.lifecycleOwner=this
         binding.tvHaveaccount.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }

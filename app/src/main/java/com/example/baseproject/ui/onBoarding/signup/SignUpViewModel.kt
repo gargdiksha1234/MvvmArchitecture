@@ -19,15 +19,12 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
     var phone= MutableLiveData<String>()
     var password= MutableLiveData<String>()
 
-    val nameError = MutableLiveData<String>()
-    val emailError = MutableLiveData<String>()
-    val phoneError = MutableLiveData<String>()
-    val passError = MutableLiveData<String>()
+    var nameError = MutableLiveData<String>()
+    var emailError = MutableLiveData<String>()
+    var phoneError = MutableLiveData<String>()
+    var passError = MutableLiveData<String>()
 
 
-    init {
-        emailError.value="Invalid Email Address"
-    }
 
     fun addPlayer(employee: Employee)
     {
@@ -48,16 +45,35 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
 
     }
 
-    fun validation(){
-        emailError.value="Invalid Email Address"
-        Log.e("emailvalid","emailvalid")
-        Log.e("emailvalid",emailError.value.toString())
-//        if(!Patterns.EMAIL_ADDRESS.matcher(email.value.toString()).matches())
-//        {
-//            Log.e("emailvalid","emailvalid")
-//            emailError.value="Invalid Email Address"
-//        }
-//        else add1()
+    fun vali(){
+        if(name.value.toString().length<3)
+            nameError.value="Enter a valid Name"
+        else {nameError.value=""
+              nnnn() }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email.value.toString()).matches())
+            emailError.value="Invalid Email Address"
+        else {emailError.value=""
+              nnnn()}
+
+        if (phone.value.toString().length != 10)
+            phoneError.value="Enter a valid number"
+        else {phoneError.value=""
+              nnnn()}
+
+        if(password.value.toString().length <6)
+            passError.value="Password must me more than 6 char"
+        else {passError.value=""
+              nnnn()}
+    }
+
+    fun nnnn()
+    {
+        if (nameError.value?.isEmpty() == true && emailError.value?.isEmpty() == true && phoneError.value?.isEmpty() == true && passError.value?.isEmpty() == true)
+        {
+            Log.d("api","api hit")
+            add1()
+        }
     }
 
 }
