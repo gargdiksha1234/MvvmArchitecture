@@ -1,9 +1,9 @@
 package com.example.baseproject.db
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.room.*
-import kotlinx.coroutines.selects.select
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface EmployeeDao {
@@ -15,4 +15,7 @@ interface EmployeeDao {
     fun getAll() : List<Employee>
     @Query("select password from employee where email=:email")
     fun loginPasswordChecking(email:String) : String
+
+    @Query("UPDATE employee SET password = :password WHERE email=:email")
+    suspend fun update(password: String, email: String)
 }
