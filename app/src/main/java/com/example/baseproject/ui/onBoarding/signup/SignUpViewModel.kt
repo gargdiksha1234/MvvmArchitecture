@@ -18,6 +18,7 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
     var email= MutableLiveData<String>()
     var phone= MutableLiveData<String>()
     var password= MutableLiveData<String>()
+    var path=MutableLiveData<String>()
 
     var nameError = MutableLiveData<String>()
     var emailError = MutableLiveData<String>()
@@ -40,7 +41,8 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
             name.value.toString(),
             email.value.toString(),
             phone.value.toString(),
-            password.value.toString()
+            password.value.toString(),
+                path.value.toString()
                 ))
 
     }
@@ -72,5 +74,7 @@ class SignUpViewModel@Inject constructor(private val employeeRepository: Employe
             add1()
         }
     }
+
+
 
 }
