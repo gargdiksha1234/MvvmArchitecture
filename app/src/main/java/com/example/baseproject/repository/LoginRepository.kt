@@ -18,10 +18,12 @@ class LoginRepository@Inject constructor(private val apiInterface: Api) {
             try {
                 if (response.isSuccessful) {
                     emit(NetworkResult.Success(response.body()))
+
                 } else {
                     val message = Gson().fromJson(
                         response.errorBody()?.charStream(),
                         BaseResponse::class.java
+
                     )
                     emit(NetworkResult.Error(message.message))
                 }
